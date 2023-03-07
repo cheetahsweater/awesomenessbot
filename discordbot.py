@@ -1,8 +1,9 @@
-﻿from logging import lastResort
-import os
+﻿import os
 import discord
 from dotenv import load_dotenv
 import random
+import tkinter as tk
+import threading as thr
 
 load_dotenv()
 TOKEN = os.getenv('DISCORD_TOKEN')
@@ -12,7 +13,8 @@ client = discord.Client(intents=intents)
 
 @client.event
 async def on_ready():
-    print(f'{client.user} is now on Discord!')
+        status.config(text="Bot is online!")
+
 
 @client.event
 async def on_message(message):
@@ -67,7 +69,11 @@ async def on_message(message):
            "Utm is just such bollocks imo i just. Its because cloudco play to the oversimplification DISEASE","The og utm style is so corporate",
            "You cant save utm just throw the whole thing away","Whiffles are annoying bad crowd are mediocre depthless villains",
            "then there is also how dibble keeps fucking up grumpy's life even when she's told to stop, but when grumpy says anything about it, he's in the wrong"]
-
+    lps = ["MY OTP IS NOW REAL! MINKA DRAW ART NOW!", '"Ack-cckkk...!" I sputtered. "I see...the light!"',"SUNIL IS SICK",
+           "https://tenor.com/view/lps-lps2012-sunil-nevla-pepper-clark-gif-26695871","Why can't she hear us talking, Russell?", 
+           "Russell, why can't she hear us speak?", "I'M NOT A HUMANARIAN! I AM... AN ANIMAL!!!",
+           'When Pepper sings "She came to hear us talking but instead of a song…", her voice sounds a lot higher than usual.'
+           "I know. Pepper's the best lookin'."]
 
     for n in range(1,63):
         grumpybedtime.append(f"https://starmoon.neocities.org/files/gb/{n}.jpg")
@@ -170,9 +176,42 @@ async def on_message(message):
         response = "lady. No words"
         await message.channel.send(response)
 
+    if 'LPS' in message.content or 'lps' in message.content or 'littlest pet shop' in message.content or 'LITTLEST PET SHOP' in message.content:
+        while True:
+            response = random.choice(lps)
+            if response == lastreponse:
+                response = random.choice(lps)
+            else:
+                await message.channel.send(response)
+                lastreponse = response
+                break
+
     if message.content == "test test test":
         response = 'True\nSo true'
         await message.channel.send(response)
 
+def stopit():
+    windah.destroy()
+    exit()
 
-client.run(TOKEN)
+def startit(TOKEN):
+    client.run(TOKEN)
+    return
+
+def run_bot():
+    status.config(text="Initializing bot...")
+    thr.Thread(target=startit, args=(TOKEN,)).start()
+
+windah = tk.Tk()
+windah.geometry("500x200")
+
+startbutt = tk.Button(windah, text="Start Bot", command=run_bot)
+startbutt.pack(pady=10)
+
+stopbutt = tk.Button(windah, text="Stop Bot", command=stopit)
+stopbutt.pack(pady=10)
+
+status = tk.Label(windah, text="Press 'Start Bot' to start the bot.")
+status.pack(pady=10)
+
+windah.mainloop()
