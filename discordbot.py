@@ -187,7 +187,7 @@ async def on_message(message):
                 lastreponse = response
                 break
 
-    if 'nic' in message.content or 'weed' in message.content or 'beer' in message.content:
+    if ' nic ' in message.content or ' weed ' in message.content or ' beer ' in message.content:
         response = wnb
         await message.channel.send(response)
 
