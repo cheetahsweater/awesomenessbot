@@ -62,7 +62,7 @@ async def on_message(message):
             "I really don’t like Shreeky. I mean, she’s a villain and she’s meant to be disliked to some extent, but she’s just overexposed in favor of No Heart himself",
             "I hate Streaky SO MUCH\nSteak\nShrieky",
             "I dont like shreeky oersinally","Shreeky is a lil' shit","I HATE SHREEKY AAAAAAAAAAAAAAAAAAAAAA",
-            ""]
+            "big question: who is the Bob the Builder of Care Bears?",]
 
     utm = ["And also how UTM era is trying to follow trends and how it has become too girly (in my opinion)",
            "as for writing, i see a progression, but this is all my opinion tho \n \naical season 1 was written pretty well, season 2 was meh  \n \nwtcal was meh, there were a few episodes that legit pissed me off slightly \n \ncare bears and cousins was written badly \n \nutm has 0 effort in the writing except the first few episodes",
@@ -72,8 +72,9 @@ async def on_message(message):
     lps = ["MY OTP IS NOW REAL! MINKA DRAW ART NOW!", '"Ack-cckkk...!" I sputtered. "I see...the light!"',"SUNIL IS SICK",
            "https://tenor.com/view/lps-lps2012-sunil-nevla-pepper-clark-gif-26695871","Why can't she hear us talking, Russell?", 
            "Russell, why can't she hear us speak?", "I'M NOT A HUMANARIAN! I AM... AN ANIMAL!!!",
-           'When Pepper sings "She came to hear us talking but instead of a song…", her voice sounds a lot higher than usual.'
+           'When Pepper sings "She came to hear us talking but instead of a song…", her voice sounds a lot higher than usual.',
            "I know. Pepper's the best lookin'."]
+    wnb = "this is a tough question. i can tell that weed is 100% staying\nhowever, nic or beer? golly gee\ni think i’m going to say nic\ni’m not too big on beer. i drink a lot, but it’s usually harder stuff\ni could do shots and i could drink seltzers. what’s the point of beer?\nbut nic is terrible for your body\nNicotine is a highly addictive substance found in tobacco products. There are approximately 50 million people in America who are addicted to some type of tobacco product, including cigarettes, cigars, chewing tobacco, and snuff. Nicotine addiction is the most common addiction in America.Sep 24, 2021\nForty percent of cancers diagnosed in the U.S. may have a link to tobacco use, according to this month’s Vital Signs Report.\ntherefore, i would gladly drop nic\nwhat about you?"
 
     for n in range(1,63):
         grumpybedtime.append(f"https://starmoon.neocities.org/files/gb/{n}.jpg")
@@ -185,6 +186,10 @@ async def on_message(message):
                 await message.channel.send(response)
                 lastreponse = response
                 break
+
+    if 'nic' in message.content or 'weed' in message.content or 'beer' in message.content:
+        response = wnb
+        await message.channel.send(response)
 
     if message.content == "test test test":
         response = 'True\nSo true'
