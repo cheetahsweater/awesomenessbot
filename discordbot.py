@@ -73,9 +73,9 @@ async def on_message(message):
            "https://tenor.com/view/lps-lps2012-sunil-nevla-pepper-clark-gif-26695871","Why can't she hear us talking, Russell?", 
            "Russell, why can't she hear us speak?", "I'M NOT A HUMANARIAN! I AM... AN ANIMAL!!!",
            'When Pepper sings "She came to hear us talking but instead of a song…", her voice sounds a lot higher than usual.',
-           "I know. Pepper's the best lookin'."]
+           "I know. Pepper's the best lookin'.", "Do not be a hater.","Very impressive, Russel! Mind if I...eugghh...TAKE A LOOK INSIDE",]
     wnb = "this is a tough question. i can tell that weed is 100% staying\nhowever, nic or beer? golly gee\ni think i’m going to say nic\ni’m not too big on beer. i drink a lot, but it’s usually harder stuff\ni could do shots and i could drink seltzers. what’s the point of beer?\nbut nic is terrible for your body\nNicotine is a highly addictive substance found in tobacco products. There are approximately 50 million people in America who are addicted to some type of tobacco product, including cigarettes, cigars, chewing tobacco, and snuff. Nicotine addiction is the most common addiction in America.Sep 24, 2021\nForty percent of cancers diagnosed in the U.S. may have a link to tobacco use, according to this month’s Vital Signs Report.\ntherefore, i would gladly drop nic\nwhat about you?"
-
+    smitty = ["People change, but catboy warfare? Catboy warfare never changes.","I know nothing about anything HERES A BULLY https://cdn.discordapp.com/attachments/1051600695020761138/1070566606268284959/image.png","https://cdn.discordapp.com/attachments/1066767538945540096/1084705479369953360/image.png"]
     for n in range(1,63):
         grumpybedtime.append(f"https://starmoon.neocities.org/files/gb/{n}.jpg")
     if message.content == 'grumpy bedtime':
@@ -194,6 +194,20 @@ async def on_message(message):
     if message.content == "test test test":
         response = 'True\nSo true'
         await message.channel.send(response)
+
+    if 'nodrance' in message.content or 'NODRANCE' in message.content:
+        response = "You'd be a mess in bed. Like, I just say \"I'm going to take you to heaven\" and then I can't because you've already fainted"
+        await message.channel.send(response)
+
+    if message.content == 'SMITTY' or message.content == 'smitty':
+        while True:
+            response = random.choice(smitty)
+            if response == lastreponse:
+                response = random.choice(smitty)
+            else:
+                await message.channel.send(response)
+                lastreponse = response
+                break
 
 def stopit():
     windah.destroy()
